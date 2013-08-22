@@ -1,0 +1,22 @@
+zipcode
+=======
+
+zipcode is a simple Go library that provides lookups for U.S. ZIP Codes.
+
+It builds its database from the CSV file located here:
+
+	http://www.boutell.com/zipcodes/
+
+Usage
+-----
+
+import (
+	"fmt"
+	"github.com/publicgoodsw/zipcode"
+)
+
+func main() {
+	zdb, _ := zipcode.NewDB("zipcode.csv")
+	zip, _ := zdb.Lookup("21230")
+	fmt.Printf("ZIP Code: %+v", zip)
+}
